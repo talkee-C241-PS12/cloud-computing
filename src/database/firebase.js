@@ -1,13 +1,7 @@
-import firebase from 'firebase';
-var firebaseConfig = {
-    apiKey:process.env.APIKEY,
-    authDomain:process.env.AUTHDOMAIN,
-    projectId:process.env.PROJECTID,
-    storageBucket: process.env.STORAGEBUCKET,
-    messagingSenderId: process.env.MESSAGINGSENDERID,
-    appId: process.env.APPID,
-    measurementId: process.env.MEASUREMENTID
-};
+const { Firestore } = require('@google-cloud/firestore');
 
-var FbApp = firebase.initializeApp(firebaseConfig);
-module.exports.FBApp = FbApp.database();
+const database = new Firestore({
+    databaseId: process.env.Firestore
+  });
+
+  module.exports = database;

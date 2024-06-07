@@ -1,7 +1,7 @@
-import FBApp from '/src/database'
+const database = require("../database/firebase")
 
 const getprofilemodel = async (email)=>{
-    var users = FBApp.collection("users");
+    var users = database.collection("users");
     var dbemail = users.doc(email)
     var returnedData
     await dbemail.get().then(doc => {
