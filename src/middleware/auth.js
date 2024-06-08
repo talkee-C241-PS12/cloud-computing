@@ -22,7 +22,10 @@ const verifymiddleware = async (req,res,next) => {
             token=req.query.token
         break;
         case "POST":
-            token=req.header["token"]
+            token=req.headers["token"]
+
+            // console.log(res.json({files:req.files,fields:req.body}))
+            // console.log(req.headers.token)
         break;
         default:
             const error = new Error("no register method")
