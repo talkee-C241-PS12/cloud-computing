@@ -8,3 +8,5 @@ env_variables:
 handlers:
   - url: /.*
     script: auto
+
+entrypoint: node src/main.js
