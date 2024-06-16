@@ -12,6 +12,9 @@ const postjawabancontroller =  async (req,res)=>{
     try{
         let email = req.datapayload.email
         let idpertanyaan = req.body.idpertanyaan
+        if(idpertanyaan==null){
+            throw new Error("missing body")
+        }
         let jawaban
         let result
         let pertanyaan = await getcurrentjawabanmodel(email,idpertanyaan)
