@@ -17,6 +17,6 @@ app.set("query parser","simple")
 app.use((err,req,res,next)=>{
     res.status(401).send("Invalid token");
 })
-app.listen(process.env.PORT,'localhost',()=>{
+app.listen(process.env.PORT,process.env.IP,()=>{
     console.log("started")
 })
