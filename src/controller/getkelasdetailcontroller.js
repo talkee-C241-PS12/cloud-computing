@@ -1,15 +1,14 @@
 const getkelasdetailmodel = require("../model/getkelasdetailmodel")
 
 const getkelasdetailcontroller = async (req,res)=>{
-    const idkelas=req.query.idkelas
     try{
-
+        const idkelas=req.query.idkelas
         let message = await getkelasdetailmodel(idkelas)
         message["status"]="success"
         res.send(message)
-    } catch(Error){
-        res.send({
-            error:Error
+    } catch(error){
+        res.status(400).send({
+            "error":error.message
         })
     }
 }

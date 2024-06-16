@@ -4,6 +4,7 @@ const {v4:uuidv4} = require("uuid")
 const postgamestartmodel = async(idgame,email)=>{
     const game = database.collection("game").doc(idgame)
     const current = database.collection("current")
+    const tanggal = new Date().toLocaleDateString()
     let gamedata
     let pertanyaan=[]
     await game.get().then((doc)=>{
@@ -17,7 +18,8 @@ const postgamestartmodel = async(idgame,email)=>{
     const uuid=uuidv4()
     gamedata.idusergame=uuid
     gamedata.pertanyaan=null
-    current.doc(email).set(gamedata)
+    gamedata.tanggal=tanggal
+    await current.doc(email).set(gamedata)
     pertanyaan.forEach(data=>{
         current.doc(email).collection("pertanyaan").doc(data.idpertanyaan).set(data)
     })

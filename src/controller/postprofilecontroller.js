@@ -6,14 +6,14 @@ const postprofilecontroller = async (req,res)=>{
         let nama = req.body.nama
         let email = req.datapayload.email
         await postprofilemodel(email,nama,image)
-    } catch(Error){
         res.send({
-            error:Error
+            "status":"success"
+        })
+    } catch(error){
+        res.status(400).send({
+            error:error.message
         })
     }
-    res.send({
-        "status":"success"
-    })
 }
 
 module.exports = postprofilecontroller
