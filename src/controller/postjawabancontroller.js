@@ -21,7 +21,6 @@ const postjawabancontroller =  async (req,res)=>{
         if (pertanyaan.tipe=="0"){
             const formData = new FormData();
             formData.append('video', req.files[0].buffer,{filename:req.files[0].mimetype});
-            console.log(process.env.MLURL)
             await axios.post(process.env.MLURL,formData, {
                 method: 'POST',
                 headers: {
