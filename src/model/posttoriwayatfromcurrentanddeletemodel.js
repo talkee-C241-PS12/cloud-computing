@@ -28,7 +28,7 @@ const posttoriwayatfromcurrentanddeletemodel = async (email,poin)=>{
         })
     })
     datacurrent.pertanyaan=null
-    datacurrent.poinuser=poin
+    datacurrent.poinuser=Math.round(poin)
     await userRiwayat.doc(datacurrent.idusergame).set(datacurrent)
     pertanyaan.forEach((data)=>{
         userRiwayat.doc(datacurrent.idusergame).collection("pertanyaan").doc(data.idpertanyaan).set(data)

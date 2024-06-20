@@ -11,6 +11,7 @@ const postgamestartcontroller =require("../controller/postgamestartcontroller")
 const postjawabancontroller = require("../controller/postjawabancontroller")
 const getriwayatgamecontroller = require("../controller/getriwayatgamecontroller")
 const getriwayatgamedetailcontroller = require("../controller/getriwayatgamedetailcontroller")
+const getleaderboardcontroller = require("../controller/getleaderboardcontroller")
 const multer = require("multer")
 
 
@@ -29,6 +30,7 @@ const intilizeroute = (expressNode)=>{
     newmiddleware.post("/api/game/answer",postjawabancontroller)
     newmiddleware.get("/api/riwayat/game",getriwayatgamecontroller)
     newmiddleware.get("/api/riwayat/game/detail",getriwayatgamedetailcontroller)
+    expressNode.get("/api/leaderboard",getleaderboardcontroller)
     expressNode.get("/api/kelas",getkelascontroller)
     expressNode.get("/api/kelas/detail",getkelasdetailcontroller)
     expressNode.get("/api/game",getgamecontroller)
