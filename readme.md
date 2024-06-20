@@ -25,21 +25,6 @@ cp .env.example .env
 # open .env and modify the environment variables
 ```
 
-Set the connection variables:
-
-```bash
-cd config
-cp config.json.example config.json
-# open config.json and modify the variables
-```
-
-Generate JWT RS256 key:
-
-```bash
-openssl rand -base64 60 
-# copy the result and paste to SECRET_KEY in .env
-```
-
 ## Table of Contents
 
 - [Commands](#commands)
@@ -103,7 +88,7 @@ IP="ip address goes here"
 ### API Endpoints
 
 List of available routes:
-
+```
 api/profile?token={token}
 api/register
 api/riwayat/game?token={token}
@@ -116,7 +101,7 @@ api/game/start
 api/game/answer
 api/profile
 api/leaderboard
-
+```
 ## License
 
 [MIT](LICENSE)
