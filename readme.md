@@ -1,5 +1,5 @@
-## Create by: OurCulture Team - Cloud Computing Team
-## Team ID: CH2-PS310
+## Create by: talkee Team - Cloud Computing Team
+## Team ID: C241-PS125
 
 This RESTful APIs created using Node.js, Express and Sequelize, ...
 
